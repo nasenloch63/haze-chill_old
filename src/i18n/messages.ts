@@ -1,0 +1,586 @@
+export type Locale = "de" | "en";
+
+export type ReviewItem = {
+  id: string;
+  name: string;
+  rating: number;
+  text: string;
+  relativeTime: string;
+};
+
+export type Messages = {
+  nav: {
+    menu: string;
+    art: string;
+    lounge: string;
+    reviews: string;
+    visit: string;
+    instagramLabel: string;
+    logoAlt: string;
+    mainAria: string;
+    openMobileNav: string;
+    closeMobileNav: string;
+    mobileNavTitle: string;
+  };
+  lang: {
+    toggleAria: string;
+    de: string;
+    en: string;
+  };
+  hero: {
+    locationLine: string;
+    subtitle: string;
+    menuCta: string;
+    vibeCta: string;
+  };
+  gallery: {
+    title: string;
+    body: string;
+    phrase1: string;
+    phrase2: string;
+    phrase3: string;
+    phrase4: string;
+    phrase5: string;
+    phrase6: string;
+    phrase7: string;
+    pic1Alt: string;
+    pic2Alt: string;
+    pic3Alt: string;
+    pic4Alt: string;
+    pic5Alt: string;
+    pic6Alt: string;
+    pic7Alt: string;
+    instagramCta: string;
+  };
+  reviews: {
+    title: string;
+    subtitle: string;
+    googleBadge: string;
+    starsAria: (n: number) => string;
+    items: ReviewItem[];
+  };
+  location: {
+    title: string;
+    intro: string;
+    colDay: string;
+    colHours: string;
+    disclaimer: string;
+    mapTitle: string;
+    mapIframeTitle: string;
+    rows: { day: string; time: string }[];
+  };
+  footer: {
+    region: string;
+    signoff: string;
+    copyright: string;
+    legalImpressum: string;
+    legalPrivacy: string;
+  };
+  menu: {
+    title: string;
+    categoriesAria: string;
+    priceAria: (price: string) => string;
+    footerNote: string;
+  };
+  lounge: {
+    title: string;
+    subtitle: string;
+    gaming: { title: string; body: string };
+    terrace: { title: string; body: string };
+  };
+  legal: {
+    backHome: string;
+    impressumTitle: string;
+    impressumTitleEn: string;
+    impressumIntroDe: string;
+    impressumIntroEn: string;
+    impressumServiceProvider: string;
+    impressumContact: string;
+    impressumVat: string;
+    impressumRegister: string;
+    impressumLiabilityContent: string;
+    impressumLiabilityContentBody: string;
+    impressumLiabilityLinks: string;
+    impressumLiabilityLinksBody: string;
+    impressumCopyright: string;
+    impressumCopyrightBody: string;
+    impressumEuOdr: string;
+    impressumEuOdrBody: string;
+    impressumDispute: string;
+    impressumDisputeBody: string;
+    impressumNoteEn: string;
+    privacyTitle: string;
+    privacyTitleEn: string;
+    privacyIntroDe: string;
+    privacyIntroEn: string;
+    privacyController: string;
+    privacyControllerBodyPrefix: string;
+    privacyGeneral: string;
+    privacyGeneralBody: string;
+    privacyHosting: string;
+    privacyHostingBody: string;
+    privacyHostingNote: string;
+    privacyHostingLegal: string;
+    privacyLocale: string;
+    privacyLocaleBody: string;
+    privacyMaps: string;
+    privacyMapsBody: string;
+    privacyMapsLegal: string;
+    privacyInstagram: string;
+    privacyInstagramBody: string;
+    privacyInstagramMeta: string;
+    privacyNoForm: string;
+    privacyNoFormBody: string;
+    privacyRetention: string;
+    privacyRetentionBody: string;
+    privacyRights: string;
+    privacyRightsIntro: string;
+    privacyRight1: string;
+    privacyRight2: string;
+    privacyRight3: string;
+    privacyRight4: string;
+    privacyRight5: string;
+    privacyRight6: string;
+    privacyRightsComplaint: string;
+    privacyChanges: string;
+    privacyChangesBody: string;
+  };
+};
+
+const reviewItemsDe: ReviewItem[] = [
+  {
+    id: "1",
+    name: "Lena M.",
+    rating: 5,
+    text: "Krass entspannte Atmosphäre — Neon-Kunst und gedimmtes Licht, fast wie in einer anderen Dimension. Beste Haze-Auswahl in der Stadt, und das Team kennt sich wirklich aus.",
+    relativeTime: "vor 2 Wochen",
+  },
+  {
+    id: "2",
+    name: "Jonas K.",
+    rating: 5,
+    text: "Top Haze, smooth Vibes, und die Musik ist on point. Wir sind stundenlang geblieben, Murals und Gespräche — perfekt.",
+    relativeTime: "vor einem Monat",
+  },
+  {
+    id: "3",
+    name: "Samira A.",
+    rating: 5,
+    text: "Die Kunst an den Wänden ist der Wahnsinn — premium, nicht aufgesetzt. Kaffee und Chill-Session — genau das, was Kassel gebraucht hat.",
+    relativeTime: "vor 3 Wochen",
+  },
+  {
+    id: "4",
+    name: "Felix R.",
+    rating: 5,
+    text: "Geile Kunst, coole Crew, echtes Lounge-Feeling. Man merkt, dass ihnen die Kultur am Herzen liegt.",
+    relativeTime: "vor 5 Tagen",
+  },
+  {
+    id: "5",
+    name: "Nina T.",
+    rating: 5,
+    text: "Mein Spot nach der Arbeit. Der Haze ist konstant stark, der Raum fühlt sich wie eine lebendige Galerie an. Immer wieder fünf Sterne.",
+    relativeTime: "vor einer Woche",
+  },
+];
+
+const reviewItemsEn: ReviewItem[] = [
+  {
+    id: "1",
+    name: "Lena M.",
+    rating: 5,
+    text: "Unreal chill atmosphere — the neon art and low lights feel like stepping into another dimension. Best haze selection in town and the staff actually know their strains.",
+    relativeTime: "2 weeks ago",
+  },
+  {
+    id: "2",
+    name: "Jonas K.",
+    rating: 5,
+    text: "Great haze, smooth vibes, and the music curation is on point. We stayed for hours just soaking in the murals and conversation.",
+    relativeTime: "1 month ago",
+  },
+  {
+    id: "3",
+    name: "Samira A.",
+    rating: 5,
+    text: "The art on the walls is insane in the best way. Feels premium, not gimmicky. Coffee and chill session — exactly what Kassel needed.",
+    relativeTime: "3 weeks ago",
+  },
+  {
+    id: "4",
+    name: "Felix R.",
+    rating: 5,
+    text: "Amazing art, friendly crew, and a proper lounge energy. You can tell they care about the culture, not just moving product.",
+    relativeTime: "5 days ago",
+  },
+  {
+    id: "5",
+    name: "Nina T.",
+    rating: 5,
+    text: "My go-to spot after work. The haze is consistently fire and the whole room feels like a living gallery. Five stars every time.",
+    relativeTime: "1 week ago",
+  },
+];
+
+export const messages: Record<Locale, Messages> = {
+  de: {
+    nav: {
+      menu: "Menü",
+      art: "Die Kunst",
+      lounge: "Der Spot",
+      reviews: "Stimmen",
+      visit: "Besuch",
+      instagramLabel: "Haze and Chill auf Instagram",
+      logoAlt: "Haze and Chill",
+      mainAria: "Hauptnavigation",
+      openMobileNav: "Menü öffnen",
+      closeMobileNav: "Menü schließen",
+      mobileNavTitle: "Navigation",
+    },
+    lang: {
+      toggleAria: "Sprache wählen",
+      de: "DE",
+      en: "EN",
+    },
+    hero: {
+      locationLine: "Kassel · Hessen",
+      subtitle:
+        "Dein Coffee Shop und Café in Kassel: Specialty Coffee, Kaffee, Cocktails und Desserts — dazu Lounge-Vibes, Terrasse und Gaming. Konsum vor Ort mit eigenem Material (bring your own); wir verkaufen kein Cannabis. Spät geöffnet, wenn du ein late night Café in Kassel suchst.",
+      menuCta: "Zum Menü",
+      vibeCta: "Dem Vibe folgen",
+    },
+    gallery: {
+      title: "Die Kunst des Chillens",
+      body: "Unsere Wände sind eine lebendige Leinwand — lila Neon trifft auf smaragdgrüne Energie. Scroll, gleit und lass dich von den Murals einziehen.",
+      phrase1: "Erhebe den Geist",
+      phrase2: "Spür den Haze",
+      phrase3: "Neon & Ruhe",
+      phrase4: "Farbe & Flow",
+      phrase5: "Lounge & Licht",
+      phrase6: "Street & Soul",
+      phrase7: "Bleib & Chill",
+      pic1Alt:
+        "Neon-lila Mural einer rauchenden Frau bei Haze and Chill in Kassel",
+      pic2Alt:
+        "Grünes Mural mit floraler Afro-Frisur bei Haze and Chill in Kassel",
+      pic3Alt: "Streetart und Neon-Atmosphäre bei Haze and Chill in Kassel",
+      pic4Alt: "Detail aus dem Innenraum bei Haze and Chill in Kassel",
+      pic5Alt: "Lounge-Vibes und Kunst bei Haze and Chill in Kassel",
+      pic6Alt: "Weitere Wandkunst bei Haze and Chill in Kassel",
+      pic7Alt: "Impression aus dem Coffeeshop Haze and Chill in Kassel",
+      instagramCta: "Folge uns auf Instagram",
+    },
+    reviews: {
+      title: "Der Vibe-Check",
+      subtitle:
+        "Echte Worte von Gästen, die vorbeigeschwebt sind — endlose Liebe im Endlos-Scroll.",
+      googleBadge: "Google-Bewertung",
+      starsAria: (n) => `${n} von 5 Sternen`,
+      items: reviewItemsDe,
+    },
+    location: {
+      title: "Standort & Zeiten",
+      intro:
+        "Suchst du ein gemütliches Café in Kassel, eine Coffeeshop-Lounge oder einen Coffee Shop nahe der Innenstadt? Bei uns gibt es Kaffee, Cocktails und Desserts — plus Konsum vor Ort mit eigenem Material in den vorgesehenen Bereichen (wir verkaufen kein Cannabis, Hasch oder CBD). Oft bis spät geöffnet — perfekt als late-night-Café in Kassel.",
+      colDay: "Tag",
+      colHours: "Uhrzeit",
+      disclaimer:
+        "Die Zeiten sind Richtwerte — bitte kurz auf Instagram checken, bevor du losziehst.",
+      mapTitle: "Karte",
+      mapIframeTitle: "Haze and Chill Kassel auf Google Maps",
+      rows: [
+        { day: "Montag – Donnerstag", time: "16:00 – 02:00" },
+        { day: "Freitag – Samstag", time: "16:00 – 02:00 (bis Ende)" },
+        { day: "Sonntag", time: "16:00 – 02:00" },
+      ],
+    },
+    footer: {
+      region: "Kassel, Hessen, Deutschland",
+      signoff: "Bleib trippy.",
+      copyright: "Haze and Chill",
+      legalImpressum: "Impressum",
+      legalPrivacy: "Datenschutz",
+    },
+    menu: {
+      title: "Menü",
+      categoriesAria: "Menü-Kategorien",
+      priceAria: (price) => `Preis ${price}`,
+      footerNote:
+        "Allergene sind als Kürzel in Klammern angegeben. Papes und sonstiges gibt's am Candyshop!",
+    },
+    lounge: {
+      title: "Spiel, Terrasse & Chill",
+      subtitle:
+        "Gaming Lounge Kassel trifft Terrasse: Konsole drinnen, frische Luft draußen — dein Spot für Drinks, Snacks und entspannte Abende. In den ausgewiesenen Bereichen chillst du mit eigenem Material; es gibt keinen Verkauf durch uns.",
+      gaming: {
+        title: "Next-Level Gaming",
+        body: "Unsere Gaming Lounge in Kassel: PlayStation, Xbox, Nintendo Switch und mehr — unter Neon, ohne Stress, mit guten Drinks in Reichweite.",
+      },
+      terrace: {
+        title: "Die Terrasse",
+        body: "Terrasse in Kassel zum Sitzen und Quatschen — ideal nach einem Cocktail oder Kaffee, wenn du die Lounge nach draußen verlängerst.",
+      },
+    },
+    legal: {
+      backHome: "Zur Startseite",
+      impressumTitle: "Impressum",
+      impressumTitleEn: "Legal notice (Impressum)",
+      impressumIntroDe:
+        "Dieses Impressum gilt für das Internetangebot unter der Domain, auf der diese Website erreichbar ist.",
+      impressumIntroEn:
+        "This page is an informal English overview. For the legally required provider identification under German law (Impressum / TMG), please refer to the German version or switch the site language to DE.",
+      impressumServiceProvider: "Service provider",
+      impressumContact: "Contact",
+      impressumVat: "VAT identification number",
+      impressumRegister: "Register entry",
+      impressumLiabilityContent: "Liability for content",
+      impressumLiabilityContentBody:
+        "As a service provider, we are responsible for our own content on these pages under general law. We are not obliged to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity.",
+      impressumLiabilityLinks: "Liability for links",
+      impressumLiabilityLinksBody:
+        "Our offer contains links to external third-party websites. We have no influence on their content; therefore we cannot assume any liability for them. The respective provider or operator is always responsible for the linked pages.",
+      impressumCopyright: "Copyright",
+      impressumCopyrightBody:
+        "Content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution, or any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.",
+      impressumEuOdr: "EU dispute resolution",
+      impressumEuOdrBody:
+        "The European Commission provides a platform for online dispute resolution (ODR):",
+      impressumDispute: "Consumer dispute resolution",
+      impressumDisputeBody:
+        "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.",
+      impressumNoteEn:
+        "German law requires a complete Impressum in German for this type of offer; use the DE language toggle for the authoritative text.",
+      privacyTitle: "Datenschutzerklärung",
+      privacyTitleEn: "Privacy policy",
+      privacyIntroDe:
+        "Nachfolgend informieren wir Sie über die Verarbeitung personenbezogener Daten beim Besuch dieser Website.",
+      privacyIntroEn:
+        "This privacy policy explains how we process personal data when you visit this website (GDPR perspective).",
+      privacyController: "Controller",
+      privacyControllerBodyPrefix: "The controller responsible for processing personal data on this website is:",
+      privacyGeneral: "General",
+      privacyGeneralBody:
+        "Protecting your personal data matters to us. This statement describes what data we process and on what legal basis, in line with the GDPR and applicable German law.",
+      privacyHosting: "Hosting and server log files",
+      privacyHostingBody:
+        "This website is hosted by an external provider. When you access the site, the infrastructure may automatically collect server log information (for example browser type, operating system, referrer URL, hostname, time of the request, IP address).",
+      privacyHostingNote: "Hosting provider:",
+      privacyHostingLegal:
+        "Processing serves the reliable operation and security of the website. Legal basis: Art. 6 (1) lit. f GDPR (legitimate interests in a functional and secure website).",
+      privacyLocale: "Language preference (local storage)",
+      privacyLocaleBody:
+        "When you switch the site language, we store your choice in your browser (localStorage). No personal profiles are created and no data is sent to us. You can delete browser storage in your settings. Legal basis: Art. 6 (1) lit. f GDPR (user-friendly presentation).",
+      privacyMaps: "Google Maps (embedded map)",
+      privacyMapsBody:
+        "We embed Google Maps on the location section. Provider: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland (parent: Google LLC, USA). When you load the page containing the map, your browser may connect to Google servers and process data such as your IP address. Further information:",
+      privacyMapsLegal:
+        "Legal basis: Art. 6 (1) lit. f GDPR (legitimate interest in showing our location). If consent is required in your case (e.g. via a cookie banner), Art. 6 (1) lit. a GDPR may apply instead.",
+      privacyInstagram: "Link to Instagram",
+      privacyInstagramBody:
+        "Our site links to our Instagram profile at",
+      privacyInstagramMeta:
+        "No data is transmitted to Meta/Instagram until you follow the link. Processing on Instagram is governed by Meta’s policies:",
+      privacyNoForm: "No contact form",
+      privacyNoFormBody:
+        "This website does not provide a contact form. Please use the email address shown in the legal notice or visit us in person.",
+      privacyRetention: "Storage period",
+      privacyRetentionBody:
+        "Unless a specific storage period is stated, we retain personal data only as long as necessary for the respective purpose. Statutory retention periods remain unaffected.",
+      privacyRights: "Your rights",
+      privacyRightsIntro:
+        "Where the legal requirements are met, you have the right to:",
+      privacyRight1: "access the personal data we hold about you (Art. 15 GDPR);",
+      privacyRight2: "rectification of inaccurate data (Art. 16 GDPR);",
+      privacyRight3: "erasure (Art. 17 GDPR);",
+      privacyRight4: "restriction of processing (Art. 18 GDPR);",
+      privacyRight5: "data portability (Art. 20 GDPR);",
+      privacyRight6:
+        "object to processing based on legitimate interests (Art. 21 GDPR).",
+      privacyRightsComplaint:
+        "You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), for example in the German state where the controller is established.",
+      privacyChanges: "Changes to this policy",
+      privacyChangesBody:
+        "We may update this privacy policy to reflect legal changes or changes to our services. The version published on this page applies on each visit.",
+    },
+  },
+  en: {
+    nav: {
+      menu: "Menu",
+      art: "The Art",
+      lounge: "The Spot",
+      reviews: "Reviews",
+      visit: "Visit",
+      instagramLabel: "Haze and Chill on Instagram",
+      logoAlt: "Haze and Chill",
+      mainAria: "Main navigation",
+      openMobileNav: "Open menu",
+      closeMobileNav: "Close menu",
+      mobileNavTitle: "Navigation",
+    },
+    lang: {
+      toggleAria: "Choose language",
+      de: "DE",
+      en: "EN",
+    },
+    hero: {
+      locationLine: "Kassel · Hessen",
+      subtitle:
+        "Neon street art and a coffeeshop-style café in Kassel — specialty coffee, cocktails, and desserts, plus lounge, terrace, and gaming. On-site use with your own material (bring your own); we do not sell cannabis. Open late when you want a late-night spot.",
+      menuCta: "View Menu",
+      vibeCta: "Follow the Vibe",
+    },
+    gallery: {
+      title: "The Art of the Chill",
+      body: "Our walls are a living canvas — purple neon dreams meet emerald botanical energy. Scroll, drift, and let the murals pull you in.",
+      phrase1: "Elevate Your Mind",
+      phrase2: "Experience the Haze",
+      phrase3: "Neon & Calm",
+      phrase4: "Color & Flow",
+      phrase5: "Lounge & Light",
+      phrase6: "Street & Soul",
+      phrase7: "Stay & Chill",
+      pic1Alt: "Neon purple mural of a smoking woman at Haze and Chill",
+      pic2Alt: "Green mural with floral afro at Haze and Chill",
+      pic3Alt: "Street art and neon atmosphere at Haze and Chill in Kassel",
+      pic4Alt: "Interior detail at Haze and Chill in Kassel",
+      pic5Alt: "Lounge vibes and art at Haze and Chill in Kassel",
+      pic6Alt: "More wall art at Haze and Chill in Kassel",
+      pic7Alt: "A moment inside Haze and Chill coffeeshop in Kassel",
+      instagramCta: "Follow us on Instagram",
+    },
+    reviews: {
+      title: "The Vibe Check",
+      subtitle:
+        "Real words from people who rolled through — infinite scroll of love.",
+      googleBadge: "Google Review",
+      starsAria: (n) => `${n} out of 5 stars`,
+      items: reviewItemsEn,
+    },
+    location: {
+      title: "Location & Hours",
+      intro:
+        "Looking for a café or coffeeshop-style lounge in central Kassel? Coffee, cocktails, and desserts — plus designated areas for on-site use with your own material. We do not sell cannabis, hash, or CBD. Hours often run late; check Instagram before you visit.",
+      colDay: "Day",
+      colHours: "Hours",
+      disclaimer:
+        "Hours are indicative — confirm on Instagram before you make the trip.",
+      mapTitle: "Map",
+      mapIframeTitle: "Haze and Chill Kassel on Google Maps",
+      rows: [
+        { day: "Monday – Thursday", time: "16:00 – 02:00" },
+        { day: "Friday – Saturday", time: "16:00 – 02:00 (till the end)" },
+        { day: "Sunday", time: "16:00 – 02:00" },
+      ],
+    },
+    footer: {
+      region: "Kassel, Hessen, Germany",
+      signoff: "Stay Trippy.",
+      copyright: "Haze and Chill",
+      legalImpressum: "Legal notice",
+      legalPrivacy: "Privacy",
+    },
+    menu: {
+      title: "The Menu",
+      categoriesAria: "Menu categories",
+      priceAria: (price) => `Price ${price}`,
+      footerNote:
+        "Allergens are shown as abbreviations in brackets. Papers and more are at the Candyshop!",
+    },
+    lounge: {
+      title: "Game, Terrace & Chill",
+      subtitle:
+        "Gaming lounge meets terrace — console inside, fresh air outside. Drinks, snacks, and relaxed evenings; on-site use with your own material in the designated areas, not a retail shop.",
+      gaming: {
+        title: "Next-level gaming",
+        body: "PlayStation, Xbox, Nintendo Switch, and more — couch co-op under the glow, controller in hand, zero stress.",
+      },
+      terrace: {
+        title: "The terrace",
+        body: "Step outside: our terrace is set up for comfort — ideal for long hangs, fresh air, and real conversation.",
+      },
+    },
+    legal: {
+      backHome: "Back to home",
+      impressumTitle: "Impressum",
+      impressumTitleEn: "Legal notice (Impressum)",
+      impressumIntroDe:
+        "Dieses Impressum gilt für das Internetangebot unter der Domain, auf der diese Website erreichbar ist.",
+      impressumIntroEn:
+        "This page is an informal English overview. For the legally required provider identification under German law (Impressum / TMG), please refer to the German version or switch the site language to DE.",
+      impressumServiceProvider: "Service provider",
+      impressumContact: "Contact",
+      impressumVat: "VAT identification number",
+      impressumRegister: "Register entry",
+      impressumLiabilityContent: "Liability for content",
+      impressumLiabilityContentBody:
+        "As a service provider, we are responsible for our own content on these pages under general law. We are not obliged to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity.",
+      impressumLiabilityLinks: "Liability for links",
+      impressumLiabilityLinksBody:
+        "Our offer contains links to external third-party websites. We have no influence on their content; therefore we cannot assume any liability for them. The respective provider or operator is always responsible for the linked pages.",
+      impressumCopyright: "Copyright",
+      impressumCopyrightBody:
+        "Content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution, or any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.",
+      impressumEuOdr: "EU dispute resolution",
+      impressumEuOdrBody:
+        "The European Commission provides a platform for online dispute resolution (ODR):",
+      impressumDispute: "Consumer dispute resolution",
+      impressumDisputeBody:
+        "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.",
+      impressumNoteEn:
+        "German law requires a complete Impressum in German for this type of offer; use the DE language toggle for the authoritative text.",
+      privacyTitle: "Datenschutzerklärung",
+      privacyTitleEn: "Privacy policy",
+      privacyIntroDe:
+        "Nachfolgend informieren wir Sie über die Verarbeitung personenbezogener Daten beim Besuch dieser Website.",
+      privacyIntroEn:
+        "This privacy policy explains how we process personal data when you visit this website (GDPR perspective).",
+      privacyController: "Controller",
+      privacyControllerBodyPrefix:
+        "The controller responsible for processing personal data on this website is:",
+      privacyGeneral: "General",
+      privacyGeneralBody:
+        "Protecting your personal data matters to us. This statement describes what data we process and on what legal basis, in line with the GDPR and applicable German law.",
+      privacyHosting: "Hosting and server log files",
+      privacyHostingBody:
+        "This website is hosted by an external provider. When you access the site, the infrastructure may automatically collect server log information (for example browser type, operating system, referrer URL, hostname, time of the request, IP address).",
+      privacyHostingNote: "Hosting provider:",
+      privacyHostingLegal:
+        "Processing serves the reliable operation and security of the website. Legal basis: Art. 6 (1) lit. f GDPR (legitimate interests in a functional and secure website).",
+      privacyLocale: "Language preference (local storage)",
+      privacyLocaleBody:
+        "When you switch the site language, we store your choice in your browser (localStorage). No personal profiles are created and no data is sent to us. You can delete browser storage in your settings. Legal basis: Art. 6 (1) lit. f GDPR (user-friendly presentation).",
+      privacyMaps: "Google Maps (embedded map)",
+      privacyMapsBody:
+        "We embed Google Maps on the location section. Provider: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland (parent: Google LLC, USA). When you load the page containing the map, your browser may connect to Google servers and process data such as your IP address. Further information:",
+      privacyMapsLegal:
+        "Legal basis: Art. 6 (1) lit. f GDPR (legitimate interest in showing our location). If consent is required in your case (e.g. via a cookie banner), Art. 6 (1) lit. a GDPR may apply instead.",
+      privacyInstagram: "Link to Instagram",
+      privacyInstagramBody: "Our site links to our Instagram profile at",
+      privacyInstagramMeta:
+        "No data is transmitted to Meta/Instagram until you follow the link. Processing on Instagram is governed by Meta’s policies:",
+      privacyNoForm: "No contact form",
+      privacyNoFormBody:
+        "This website does not provide a contact form. Please use the email address shown in the legal notice or visit us in person.",
+      privacyRetention: "Storage period",
+      privacyRetentionBody:
+        "Unless a specific storage period is stated, we retain personal data only as long as necessary for the respective purpose. Statutory retention periods remain unaffected.",
+      privacyRights: "Your rights",
+      privacyRightsIntro:
+        "Where the legal requirements are met, you have the right to:",
+      privacyRight1:
+        "access the personal data we hold about you (Art. 15 GDPR);",
+      privacyRight2: "rectification of inaccurate data (Art. 16 GDPR);",
+      privacyRight3: "erasure (Art. 17 GDPR);",
+      privacyRight4: "restriction of processing (Art. 18 GDPR);",
+      privacyRight5: "data portability (Art. 20 GDPR);",
+      privacyRight6:
+        "object to processing based on legitimate interests (Art. 21 GDPR).",
+      privacyRightsComplaint:
+        "You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), for example in the German state where the controller is established.",
+      privacyChanges: "Changes to this policy",
+      privacyChangesBody:
+        "We may update this privacy policy to reflect legal changes or changes to our services. The version published on this page applies on each visit.",
+    },
+  },
+};
