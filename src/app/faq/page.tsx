@@ -6,6 +6,8 @@ import { FaqSection } from "@/components/haze/faq-section";
 import { faqItems } from "@/data/faq-items";
 import { buildPageMetadata, seoConfig } from "@/lib/seo";
 
+
+
 const faqPageDescription =
   "FAQ Haze and Chill Kassel: Café, Coffeeshop-Lounge, Gaming, Terrasse, Kiffen und Konsum vor Ort mit eigenem Material — ausdrücklich kein Cannabis-, Hash- oder Weed-Verkauf, kein CBD-Shop.";
 

@@ -4,6 +4,8 @@ import { SiteFooter } from "@/components/haze/site-footer";
 import { ImpressumView } from "@/components/haze/impressum-view";
 import { buildPageMetadata } from "@/lib/seo";
 
+
+
 export const metadata: Metadata = buildPageMetadata({
   title: "Impressum und Kontakt in Kassel",
   description:

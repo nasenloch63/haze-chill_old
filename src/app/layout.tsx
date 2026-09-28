@@ -6,6 +6,8 @@ import { siteLegal } from "@/config/site-legal";
 import { seoConfig } from "@/lib/seo";
 import "./globals.css";
 
+
+
 const display = Syne({
   subsets: ["latin"],
   variable: "--font-display",
