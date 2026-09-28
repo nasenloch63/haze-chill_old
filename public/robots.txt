@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block non-public or technical paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /private/
+Disallow: /staging/
+Disallow: /test/
+Disallow: /404
+Disallow: /500
+
+Sitemap: https://haze-chill.com/sitemap.xml
