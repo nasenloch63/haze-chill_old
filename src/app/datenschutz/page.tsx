@@ -4,6 +4,8 @@ import { SiteFooter } from "@/components/haze/site-footer";
 import { DatenschutzView } from "@/components/haze/datenschutz-view";
 import { buildPageMetadata } from "@/lib/seo";
 
+
+
 export const metadata: Metadata = buildPageMetadata({
   title: "Datenschutzerklaerung",
   description:

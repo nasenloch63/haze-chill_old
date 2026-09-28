@@ -29,6 +29,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     try {
       const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
       if (stored === "en" || stored === "de") {
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- restore the persisted locale after hydration.
         setLocaleState(stored);
       }
     } catch {

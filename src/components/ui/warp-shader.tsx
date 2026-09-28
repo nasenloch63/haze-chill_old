@@ -27,6 +27,7 @@ export function WarpShaderHero({ children }: { children: React.ReactNode }) {
   const targetRef = useRef({ x: 0, y: 0, rot: 0 });
   const currentRef = useRef({ x: 0, y: 0, rot: BASE_ROTATION });
   const rafRef = useRef<number>(0);
+  const tickRef = useRef<() => void>(() => undefined);
   const [warpProps, setWarpProps] = useState({
     offsetX: 0,
     offsetY: 0,
@@ -72,14 +73,18 @@ export function WarpShaderHero({ children }: { children: React.ReactNode }) {
       return;
     }
 
-    rafRef.current = requestAnimationFrame(tick);
+    rafRef.current = requestAnimationFrame(tickRef.current);
   }, []);
+
+  useEffect(() => {
+    tickRef.current = tick;
+  }, [tick]);
 
   const scheduleTick = useCallback(() => {
     if (!rafRef.current) {
-      rafRef.current = requestAnimationFrame(tick);
+      rafRef.current = requestAnimationFrame(tickRef.current);
     }
-  }, [tick]);
+  }, []);
 
   useEffect(() => {
     const onMove = (e: PointerEvent) => {

@@ -11,6 +11,8 @@ import { LocationHours } from "@/components/haze/location-hours";
 import { SiteFooter } from "@/components/haze/site-footer";
 import { buildPageMetadata, seoConfig } from "@/lib/seo";
 
+
+
 export const metadata: Metadata = buildPageMetadata({
   title: "Café, Coffeeshop und Lounge in Kassel",
   description:
