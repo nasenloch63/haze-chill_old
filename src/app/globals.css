@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 270 20% 98%;
+    --muted: 270 10% 18%;
+    --muted-foreground: 270 10% 65%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 160 84% 10%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#0a0a0a] text-foreground antialiased;
+  }
+
+  ::selection {
+    @apply bg-emerald-500/30 text-white;
+  }
+
+  *:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-emerald-400/80 rounded-sm;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
