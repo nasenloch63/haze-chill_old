@@ -1,13 +1,5 @@
 export type Locale = "de" | "en";
 
-export type ReviewItem = {
-  id: string;
-  name: string;
-  rating: number;
-  text: string;
-  relativeTime: string;
-};
-
 export type Messages = {
   links: {
     navLabel: string;
@@ -67,27 +59,26 @@ export type Messages = {
     subtitle: string;
     googleBadge: string;
     starsAria: (n: number) => string;
-    items: ReviewItem[];
+    readAll: string;
   };
   location: {
     title: string;
     intro: string;
     colDay: string;
     colHours: string;
-    disclaimer: string;
     mapTitle: string;
     mapIframeTitle: string;
     rows: { day: string; time: string }[];
   };
   footer: {
     region: string;
-    signoff: string;
     copyright: string;
     legalImpressum: string;
     legalPrivacy: string;
   };
   menu: {
     title: string;
+    pdfCta: string;
     categoriesAria: string;
     priceAria: (price: string) => string;
     footerNote: string;
@@ -157,82 +148,6 @@ export type Messages = {
   };
 };
 
-const reviewItemsDe: ReviewItem[] = [
-  {
-    id: "1",
-    name: "Lena M.",
-    rating: 5,
-    text: "Krass entspannte Atmosphäre — Neon-Kunst und gedimmtes Licht, fast wie in einer anderen Dimension. Beste Haze-Auswahl in der Stadt, und das Team kennt sich wirklich aus.",
-    relativeTime: "vor 2 Wochen",
-  },
-  {
-    id: "2",
-    name: "Jonas K.",
-    rating: 5,
-    text: "Top Haze, smooth Vibes, und die Musik ist on point. Wir sind stundenlang geblieben, Murals und Gespräche — perfekt.",
-    relativeTime: "vor einem Monat",
-  },
-  {
-    id: "3",
-    name: "Samira A.",
-    rating: 5,
-    text: "Die Kunst an den Wänden ist der Wahnsinn — premium, nicht aufgesetzt. Kaffee und Chill-Session — genau das, was Kassel gebraucht hat.",
-    relativeTime: "vor 3 Wochen",
-  },
-  {
-    id: "4",
-    name: "Felix R.",
-    rating: 5,
-    text: "Geile Kunst, coole Crew, echtes Lounge-Feeling. Man merkt, dass ihnen die Kultur am Herzen liegt.",
-    relativeTime: "vor 5 Tagen",
-  },
-  {
-    id: "5",
-    name: "Nina T.",
-    rating: 5,
-    text: "Mein Spot nach der Arbeit. Der Haze ist konstant stark, der Raum fühlt sich wie eine lebendige Galerie an. Immer wieder fünf Sterne.",
-    relativeTime: "vor einer Woche",
-  },
-];
-
-const reviewItemsEn: ReviewItem[] = [
-  {
-    id: "1",
-    name: "Lena M.",
-    rating: 5,
-    text: "Unreal chill atmosphere — the neon art and low lights feel like stepping into another dimension. Best haze selection in town and the staff actually know their strains.",
-    relativeTime: "2 weeks ago",
-  },
-  {
-    id: "2",
-    name: "Jonas K.",
-    rating: 5,
-    text: "Great haze, smooth vibes, and the music curation is on point. We stayed for hours just soaking in the murals and conversation.",
-    relativeTime: "1 month ago",
-  },
-  {
-    id: "3",
-    name: "Samira A.",
-    rating: 5,
-    text: "The art on the walls is insane in the best way. Feels premium, not gimmicky. Coffee and chill session — exactly what Kassel needed.",
-    relativeTime: "3 weeks ago",
-  },
-  {
-    id: "4",
-    name: "Felix R.",
-    rating: 5,
-    text: "Amazing art, friendly crew, and a proper lounge energy. You can tell they care about the culture, not just moving product.",
-    relativeTime: "5 days ago",
-  },
-  {
-    id: "5",
-    name: "Nina T.",
-    rating: 5,
-    text: "My go-to spot after work. The haze is consistently fire and the whole room feels like a living gallery. Five stars every time.",
-    relativeTime: "1 week ago",
-  },
-];
-
 export const messages: Record<Locale, Messages> = {
   de: {
     links: {
@@ -292,12 +207,11 @@ export const messages: Record<Locale, Messages> = {
       instagramCta: "Folge uns auf Instagram",
     },
     reviews: {
-      title: "Der Vibe-Check",
-      subtitle:
-        "Echte Worte von Gästen, die vorbeigeschwebt sind — endlose Liebe im Endlos-Scroll.",
+      title: "Das sagen unsere Gäste",
+      subtitle: "Ausgewählte Originalrezensionen von Google.",
       googleBadge: "Google-Bewertung",
       starsAria: (n) => `${n} von 5 Sternen`,
-      items: reviewItemsDe,
+      readAll: "Alle Rezensionen auf Google",
     },
     location: {
       title: "Standort & Zeiten",
@@ -305,29 +219,23 @@ export const messages: Record<Locale, Messages> = {
         "Suchst du ein gemütliches Café in Kassel, eine Coffeeshop-Lounge oder einen Coffee Shop nahe der Innenstadt? Bei uns gibt es Kaffee, Cocktails und Desserts — plus Konsum vor Ort mit eigenem Material in den vorgesehenen Bereichen (wir verkaufen kein Cannabis, Hasch oder CBD). Oft bis spät geöffnet — perfekt als late-night-Café in Kassel.",
       colDay: "Tag",
       colHours: "Uhrzeit",
-      disclaimer:
-        "Die Zeiten sind Richtwerte — bitte kurz auf Instagram checken, bevor du losziehst.",
       mapTitle: "Karte",
       mapIframeTitle: "Haze and Chill Kassel auf Google Maps",
-      rows: [
-        { day: "Montag – Donnerstag", time: "16:00 – 02:00" },
-        { day: "Freitag – Samstag", time: "16:00 – 02:00 (bis Ende)" },
-        { day: "Sonntag", time: "16:00 – 02:00" },
-      ],
+      rows: [{ day: "Montag – Sonntag", time: "17:00 – 02:00 Uhr (bis Ende)" }],
     },
     footer: {
       region: "Kassel, Hessen, Deutschland",
-      signoff: "Bleib trippy.",
       copyright: "Haze and Chill",
       legalImpressum: "Impressum",
       legalPrivacy: "Datenschutz",
     },
     menu: {
       title: "Menü",
+      pdfCta: "Speisekarte als PDF",
       categoriesAria: "Menü-Kategorien",
       priceAria: (price) => `Preis ${price}`,
       footerNote:
-        "Allergene sind als Kürzel in Klammern angegeben. Papes und sonstiges gibt's am Candyshop!",
+        "Kennzeichnungen in Klammern sind aus der Speisekarte übernommen. Hinweise zu Allergenen erhältst du an der Theke.",
     },
     lounge: {
       title: "Spiel, Terrasse & Chill",
@@ -480,42 +388,35 @@ export const messages: Record<Locale, Messages> = {
       instagramCta: "Follow us on Instagram",
     },
     reviews: {
-      title: "The Vibe Check",
-      subtitle:
-        "Real words from people who rolled through — infinite scroll of love.",
+      title: "What our guests say",
+      subtitle: "Selected original reviews from Google.",
       googleBadge: "Google Review",
       starsAria: (n) => `${n} out of 5 stars`,
-      items: reviewItemsEn,
+      readAll: "See all reviews on Google",
     },
     location: {
       title: "Location & Hours",
       intro:
-        "Looking for a café or coffeeshop-style lounge in central Kassel? Coffee, cocktails, and desserts — plus designated areas for on-site use with your own material. We do not sell cannabis, hash, or CBD. Hours often run late; check Instagram before you visit.",
+        "Looking for a café or coffeeshop-style lounge in central Kassel? Coffee, cocktails, and desserts — plus designated areas for on-site use with your own material. We do not sell cannabis, hash, or CBD. Open every day from 17:00 until 02:00 (till the end).",
       colDay: "Day",
       colHours: "Hours",
-      disclaimer:
-        "Hours are indicative — confirm on Instagram before you make the trip.",
       mapTitle: "Map",
       mapIframeTitle: "Haze and Chill Kassel on Google Maps",
-      rows: [
-        { day: "Monday – Thursday", time: "16:00 – 02:00" },
-        { day: "Friday – Saturday", time: "16:00 – 02:00 (till the end)" },
-        { day: "Sunday", time: "16:00 – 02:00" },
-      ],
+      rows: [{ day: "Monday – Sunday", time: "17:00 – 02:00 (till the end)" }],
     },
     footer: {
       region: "Kassel, Hessen, Germany",
-      signoff: "Stay Trippy.",
       copyright: "Haze and Chill",
       legalImpressum: "Legal notice",
       legalPrivacy: "Privacy",
     },
     menu: {
       title: "The Menu",
+      pdfCta: "Menu as PDF",
       categoriesAria: "Menu categories",
       priceAria: (price) => `Price ${price}`,
       footerNote:
-        "Allergens are shown as abbreviations in brackets. Papers and more are at the Candyshop!",
+        "Numbered markings in brackets are taken from the printed menu. Ask at the counter for allergen details.",
     },
     lounge: {
       title: "Game, Terrace & Chill",

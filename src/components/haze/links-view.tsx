@@ -5,6 +5,7 @@ import { ArrowUpRight, Globe, Instagram, MapPin, UtensilsCrossed } from "lucide-
 import { GradientLogoMark } from "@/components/haze/gradient-logo-mark";
 import { LanguageToggle } from "@/components/haze/language-toggle";
 import { useLanguage } from "@/i18n/language-provider";
+import { WebsiteCredit } from "@/components/haze/website-credit";
 
 export function LinksView() {
   const { t } = useLanguage();
@@ -121,7 +122,9 @@ export function LinksView() {
             {t.footer.legalPrivacy}
           </Link>
         </nav>
-        <p className="mt-2 font-display italic text-emerald-300/70">{t.footer.signoff}</p>
+        <div className="mt-3">
+          <WebsiteCredit />
+        </div>
       </footer>
     </div>
   );

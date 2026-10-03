@@ -10,243 +10,170 @@ export type MenuCategory = {
   items: MenuItem[];
 };
 
+function item(name: string, price: string, description = ""): MenuItem {
+  return { name, description, price };
+}
+
+// Source: public/speisekarte.pdf; Maxi King and Proteinshake markings confirmed by owner.
 export const menuData: MenuCategory[] = [
   {
-    category: "Snacks & Sweets",
+    category: "Snacks",
     items: [
-      {
-        name: "M&M's",
-        description: "(Peanut Chocolate, Crispy) [E, G, F, A]",
-        price: "3,50€",
-      },
-      {
-        name: "NicNac's",
-        description: "(Classic, Barbecue, Nachocheese) [A, G, I, J]",
-        price: "3,50€",
-      },
-      { name: "Chips", description: "[G, J]", price: "3,50€" },
-      {
-        name: "Kinder Pingui / Maxi King",
-        description: "[A, G, F, H]",
-        price: "2,00€",
-      },
-      {
-        name: "Schnucketüte",
-        description: "[A, G, F, H je nach Inhalt]",
-        price: "2,00€",
-      },
-      { name: "Cookie", description: "[A, C, G, H]", price: "4,50€" },
-      { name: "Kuchen", description: "[A, C, G, H]", price: "4,00€" },
-      { name: "Donuts", description: "[A, C, G, F]", price: "4,00€" },
-      {
-        name: "Lotus Cake",
-        description: "(Dubai, Schokolade) [A, C, G, F, K]",
-        price: "4,00€",
-      },
+      item("Maxi King", "2,00 €", "[1, 13]"),
+      item("Süßigkeitentüte", "2,50 €", "[1, 3, 13, 14]"),
+      item("Jogurt mit der Ecke", "2,50 €", "[15]"),
+      item("M&Ms", "3,50 €", "[1, 3, 4, 14, 13]"),
+      item("NicNac’s", "3,50 €", "[1, 2, 3, 4, 13]"),
+      item("Chips", "3,50 €", "[1, 2, 3, 4, 13]"),
+      item("Sucuktoast", "4,00 €", "[1, 3, 6, 9]"),
+      item("Bananentoast", "4,00 €", "[1, 3, 6, 9]"),
+      item("Buenotoast", "4,00 €", "[1, 3, 6, 9]"),
+      item("Kuchen", "4,50 €", "[1, 3, 4, 13, 14]"),
     ],
   },
   {
-    category: "Warme Snacks",
+    category: "Fruchtbecher",
     items: [
-      {
-        name: "Sucuk Toast",
-        description: "(Sucuk, Käse, Streichfett) [A, G, I, J]",
-        price: "3,50€",
-      },
-      {
-        name: "Hotdog",
-        description: "(Mit Ketchup, Senf, Mayo) [A, C, I, J]",
-        price: "4,40€",
-      },
-      {
-        name: "Nachos",
-        description: "mit warmen Käse Dip [G, A]",
-        price: "6,50€",
-      },
-      { name: "Ramen", description: "[A, F, I, K, C]", price: "4,00€" },
-      { name: "Extra Dip", description: "[G, C, J]", price: "0,50€" },
+      item("Kiwi", "4,00 €", "[1, 3, 13, 14]"),
+      item("Erdbeere", "4,00 €", "[1, 3, 13, 14]"),
+      item("Mango", "4,00 €", "[1, 3, 13, 14]"),
+      item("Oreo", "4,00 €", "[1, 3, 13, 14]"),
+      item("Lotus", "4,00 €", "[1, 3, 13, 14]"),
+      item("Pistazie", "4,00 €", "[1, 3, 4, 13, 14]"),
     ],
   },
   {
-    category: "Vegan",
+    category: "Nachos",
     items: [
-      {
-        name: "Coconut Milk Drink",
-        description: "(Avocado, Mango, Mangosteen) - 0.33l",
-        price: "3,90€",
-      },
+      item("Nachos mit Dip", "4,90 €", "[1, 3, 4, 14]"),
+      item("Nachos mit Goudakäse und Dip", "5,90 €", "[1, 3, 4, 14]"),
     ],
   },
   {
-    category: "Soft Drinks",
+    category: "Ramen",
     items: [
-      {
-        name: "Coca Cola",
-        description: "(classic, light, zero) - 0.33l",
-        price: "3,90€",
-      },
-      {
-        name: "Fanta",
-        description: "(Orange, Exotic, Drachenfrucht) - 0.33l",
-        price: "3,90€",
-      },
-      { name: "Moloko", description: "0.25l", price: "4,00€" },
-      {
-        name: "Redbull",
-        description: "(Classic / White) - 0.25l",
-        price: "4,00€",
-      },
-      { name: "28 Black", description: "0.25l", price: "4,00€" },
-      { name: "Vita Malz", description: "[A] - 0.33l", price: "4,00€" },
-      {
-        name: "Wasser",
-        description: "(still & sprudelig) - 0.33l",
-        price: "3,50€",
-      },
-      { name: "Tonic Water", description: "0.33l", price: "3,90€" },
-      { name: "Ginger Ale", description: "0.33l", price: "3,90€" },
-      { name: "Chocomel", description: "0.33l", price: "3,90€" },
-      {
-        name: "Hausgemachter Eistee",
-        description: "0.33l",
-        price: "3,90€",
-      },
+      item("Cup Noodles", "4,00 €", "[1, 5, 6]"),
+      item("Cup Noodles scharf", "4,00 €", "[1, 5, 6]"),
+    ],
+  },
+  {
+    category: "Eis",
+    items: [
+      item("Spaghetti-Eis", "3,50 €", "[1, 3, 13, 14]"),
+      item("Snickers, Twix oder Bounty", "2,50 €", "[1, 2, 3]"),
+      item("Wassereis", "2,00 €", "Verschiedene Sorten · [9, 10, 13]"),
+    ],
+  },
+  {
+    category: "Softdrinks",
+    items: [
+      item("Stilles Wasser", "2,90 €", "0,33 l"),
+      item("Sprudelwasser", "2,90 €", "0,33 l"),
+      item("Hausgemachter Eistee", "3,50 €", "0,33 l"),
+      item("Ekofresh Ice Tea", "3,50 €", "Waldfrucht, Pfirsich oder Zitrone · 0,33 l"),
+      item("Hot Blood Ice Tea", "3,50 €", "Kirsche oder Tropical · 0,33 l"),
+      item("Coca Cola, Sprite, Fanta", "3,50 €", "Verschiedene Sorten, auch Zero · 0,33 l · [10, 11, 13]"),
+      item("Spezi", "3,50 €", "0,33 l · [15]"),
+      item("Ginger Ale", "3,50 €", "0,33 l · [13]"),
+      item("Chocomel", "3,50 €", "0,33 l · [1, 3, 14]"),
+      item("Red Bull", "4,00 €", "Verschiedene Sorten · 0,33 l · [10, 11, 13, 15]"),
+      item("28 Black", "4,00 €", "0,25 l · [15]"),
+      item("Moloko", "4,00 €", "0,25 l · [15]"),
     ],
   },
   {
     category: "Heißgetränke",
-    notes:
-      "Mit Sirup nach Wahl (Kokos, Vanille, Salted Caramel) 0,50€ Aufpreis [G]",
     items: [
-      { name: "Café Crema", description: "[G]", price: "3,80€" },
-      { name: "Café Tonic", description: "", price: "4,30€" },
-      { name: "Espresso", description: "", price: "3,20€" },
-      { name: "Cappuccino", description: "[G]", price: "3,80€" },
-      { name: "Latte Macchiato", description: "[G]", price: "4,00€" },
-      { name: "Heiße Schokolade", description: "[G]", price: "4,00€" },
-      {
-        name: "Tee",
-        description: "(verschiedene Sorten)",
-        price: "3,80€",
-      },
-      {
-        name: "Matcha",
-        description: "[G] Falls mit milch",
-        price: "6,50€",
-      },
+      item("Café Crema", "3,20 €", "0,2 l · [15]"),
+      item("Espresso", "2,80 €", "0,04 l · [15]"),
+      item("Cappuccino", "3,20 €", "0,2 l · [3, 14, 15]"),
+      item("Latte Macchiato", "3,20 €", "0,3 l · [3, 14, 15]"),
+      item("Heiße Schokolade", "3,20 €", "0,3 l · [3, 14, 15]"),
+      item("Tee", "3,00 €", "0,3 l · [15]"),
+      item("Matcha Tee", "3,50 €", "0,3 l"),
     ],
   },
   {
     category: "Säfte",
     items: [
-      { name: "Orangensaft", description: "0.3l", price: "3,80€" },
-      { name: "Mangosaft", description: "0.3l", price: "3,80€" },
-      { name: "Bananensaft", description: "0.3l", price: "3,80€" },
-      { name: "KiBa", description: "0.3l", price: "3,80€" },
+      item("Orangennektar", "3,20 €", "0,3 l"),
+      item("KiBa", "3,20 €", "Sauerkirsch- und Bananennektar · 0,3 l"),
+      item("Mangonektar", "3,20 €", "0,3 l"),
+      item("Bananennektar", "3,20 €", "0,3 l"),
+      item("Ananasnektar", "3,20 €", "0,3 l"),
     ],
   },
   {
-    category: "Milkshakes",
+    category: "Shakes",
     items: [
-      { name: "Erdbeershake", description: "[G] - 0.4l", price: "6,50€" },
-      { name: "Bananenshake", description: "[G] - 0.4l", price: "6,50€" },
-      { name: "Oreoshake", description: "[A, G] - 0.4l", price: "6,50€" },
-      { name: "Raffaelloshake", description: "[G, H] - 0.4l", price: "6,50€" },
-      { name: "Mangoshake", description: "[G] - 0.4l", price: "6,50€" },
-      { name: "Proteinshake", description: "[G, F] - 0.4l", price: "7,00€" },
+      item("Erdbeershake", "5,90 €", "0,4 l · [3, 14]"),
+      item("Mangoshake", "5,90 €", "0,4 l · [3, 14]"),
+      item("Bananenshake", "5,90 €", "0,4 l · [3, 14]"),
+      item("Oreoshake", "5,90 €", "0,4 l · [1, 3, 14]"),
+      item("Raffaelloshake", "5,90 €", "0,4 l · [3, 4, 14]"),
+      item("Proteinshake", "6,50 €", "0,4 l · [3, 14]"),
     ],
   },
   {
     category: "Bier",
     items: [
-      { name: "Heineken", description: "[A] - 0.33l", price: "4,50€" },
-      { name: "Bayreuther Hell", description: "[A] - 0.33l", price: "4,50€" },
-      { name: "Corona", description: "[A] - 0.33l", price: "4,90€" },
-      { name: "Desperados", description: "[A] - 0.33l", price: "4,90€" },
+      item("Heineken", "4,00 €", "0,25 l · [1, 16]"),
+      item("Bayreuther", "4,00 €", "0,33 l · [1, 16]"),
+      item("Becks", "4,00 €", "0,33 l · [1, 16]"),
+      item("Desperados", "4,50 €", "0,33 l · [1, 13, 16]"),
+      item("Corona", "4,50 €", "0,33 l · [1, 16]"),
     ],
   },
   {
-    category: "Long Drinks",
+    category: "Longdrinks",
     items: [
-      {
-        name: "Jacky Cola",
-        description: "(Jack Daniels, Coca Cola) - 0.4l",
-        price: "6,50€",
-      },
-      {
-        name: "Vodka E",
-        description: "(Vodka, Redbull, Eis) - 0.4l",
-        price: "6,50€",
-      },
-      {
-        name: "Havanna Cola",
-        description: "(Havana Club, Cola) - 0.4l",
-        price: "6,50€",
-      },
-      {
-        name: "Jägermeister Cola",
-        description: "(Jägermeister, Cola) - 0.4l",
-        price: "6,50€",
-      },
+      item("Jacky Cola", "5,50 €", "0,4 l · [13, 15, 16]"),
+      item("Vodka E", "5,50 €", "0,4 l · [10, 11, 13, 15, 16]"),
+      item("Cola Havanna", "5,50 €", "0,4 l · [13, 15, 16]"),
+      item("Jägermeister Cola", "5,50 €", "0,4 l · [13, 15, 16]"),
+      item("Gin Tonic", "5,50 €", "0,4 l · [12, 16]"),
+      item("Long Island Ice Tea", "5,50 €", "0,4 l · [13, 14, 15]"),
     ],
   },
   {
-    category: "Cocktails (Alkohol)",
+    category: "Shots",
     items: [
-      {
-        name: "Sex on the Beach",
-        description:
-          "(Vodka, Orangensaft, Mangosaft, Zitronensaft, Grenadine, Ananassaft) - 0.5l",
-        price: "8,00€",
-      },
-      {
-        name: "Pina Colada",
-        description:
-          "(Weißer Rum, Kokossirup, Ananassaft, Sahne) [G] - 0.5l",
-        price: "8,00€",
-      },
-      {
-        name: "Mojito",
-        description:
-          "(Weißer Rum, Limettensaft, Rohrzucker, Minze, Soda) - 0.5l",
-        price: "8,00€",
-      },
-      {
-        name: "Cuba Libre",
-        description: "(Havana Club, Limette, Cola) - 0.5l",
-        price: "8,00€",
-      },
-      {
-        name: "Tequila Sunrise",
-        description: "(Tequila, Orangensaft, Grenadine) - 0.5l",
-        price: "8,00€",
-      },
+      item("Jägermeister", "2,50 €", "[16]"),
+      item("Vodka", "2,50 €", "[16]"),
+      item("Tequila", "2,50 €", "[16]"),
+      item("FICKEN", "2,50 €", "[16]"),
+      item("Licor 43", "2,50 €", "[16]"),
     ],
   },
   {
-    category: "Mocktails (Alkoholfrei)",
+    category: "Cocktails (mit Alkohol)",
     items: [
-      {
-        name: "Virgin Colada",
-        description: "(Kokossirup, Ananassaft, Sahne) [G] - 0.5l",
-        price: "7,00€",
-      },
-      {
-        name: "Virgin Mojito",
-        description: "(Limette, Minze, Rohrzucker, Ginger Ale) - 0.5l",
-        price: "7,00€",
-      },
-      {
-        name: "Ipanema",
-        description: "(Limette, Maracuja, Rohrzucker, Ginger Ale) - 0.5l",
-        price: "7,00€",
-      },
-      {
-        name: "Flamingo",
-        description:
-          "(Barsirup Kokos, Orangensaft, Grapefruitsaft, Barsirup Erdbeere) - 0.5l",
-        price: "7,00€",
-      },
+      item("Sex on the Beach", "6,90 €", "Vodka, Orangensaft, Mangosaft, Zitronensaft, Grenadine & Ananassaft"),
+      item("Pina Colada", "6,90 €", "Weißer Rum, Kokossirup, Ananassaft & Sahne"),
+      item("Mojito", "6,90 €", "Weißer Rum, Limettensaft, Rohrzucker, Minze & Soda"),
+      item("Cuba Libre", "6,90 €", "Havana Club, Limette & Cola"),
+      item("Tequila Sunrise", "6,90 €", "Tequila, Limettensaft & Orangensaft"),
+    ],
+  },
+  {
+    category: "Cocktails (alkoholfrei)",
+    items: [
+      item("Virgin Colada", "5,90 €", "Kokossirup, Ananassaft & Sahne"),
+      item("Virgin Mojito", "5,90 €", "Limette, Minze, Rohrzucker & Ginger Ale"),
+      item("Ipanema", "5,90 €", "Limette, Maracuja, Rohrzucker & Ginger Ale"),
+      item("Flamingo", "5,90 €", "Kokossirup, Orangensaft, Grapefruitsaft & Erdbeersirup"),
+    ],
+  },
+  {
+    category: "Menüs",
+    items: [
+      item("Cocktail-Menü ohne Alkohol", "9,90 €", "2 × Cocktails ohne Alkohol"),
+      item("Cocktail-Menü mit Alkohol", "10,90 €", "2 × Cocktails mit Alkohol"),
+      item("Softdrink-Menü mit Eistee", "9,90 €", "2 × hausgemachter Eistee + Nachos"),
+      item("Softdrink-Menü mit Red Bull", "10,90 €", "2 × Red Bull + Nachos"),
+      item("Shake-Menü", "9,90 €", "2 × Shakes nach Wahl"),
+      item("Chill-Menü mit Eistee", "9,90 €", "2 × hausgemachter Eistee + Bong"),
+      item("Chill-Menü mit Red Bull", "10,90 €", "2 × Red Bull + Bong"),
     ],
   },
 ];

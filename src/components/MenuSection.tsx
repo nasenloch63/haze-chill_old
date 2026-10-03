@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowUpRight, FileText } from "lucide-react";
 import { menuData } from "@/data/menu-data";
 import { menuCategoryVisuals } from "@/data/menu-category-visuals";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -69,6 +70,17 @@ export function MenuSection() {
               {t.menu.title}
             </span>
           </h2>
+          <a
+            href="/speisekarte.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm text-violet-100/90 transition-colors hover:border-emerald-400/40 hover:text-emerald-300"
+          >
+            <FileText className="h-4 w-4" strokeWidth={1.75} aria-hidden />
+            {t.menu.pdfCta}
+            <ArrowUpRight className="h-4 w-4" aria-hidden />
+            <span className="sr-only">{t.links.newTab}</span>
+          </a>
         </header>
 
         <Tabs
@@ -82,7 +94,7 @@ export function MenuSection() {
             className="mb-8 flex w-full flex-nowrap justify-start gap-3 overflow-x-auto overflow-y-visible border-0 bg-transparent p-1 pb-3 pt-1 scrollbar-hide sm:flex-wrap sm:justify-center sm:gap-4 sm:overflow-visible sm:pb-2"
           >
             {menuData.map((cat, i) => {
-              const visual = menuCategoryVisuals[i];
+              const visual = menuCategoryVisuals[cat.category];
               if (!visual) return null;
               const { Icon, gradientFrom, gradientTo } = visual;
               return (
