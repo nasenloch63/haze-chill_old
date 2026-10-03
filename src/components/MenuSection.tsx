@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ArrowUpRight, FileText } from "lucide-react";
 import { menuData } from "@/data/menu-data";
 import { menuCategoryVisuals } from "@/data/menu-category-visuals";
@@ -81,6 +82,11 @@ export function MenuSection() {
             <ArrowUpRight className="h-4 w-4" aria-hidden />
             <span className="sr-only">{t.links.newTab}</span>
           </a>
+          <div className="mt-3">
+            <Link href="/speisekarte" className="inline-flex min-h-11 items-center text-sm text-emerald-300 underline underline-offset-4">
+              {t.menu.fullMenuCta}
+            </Link>
+          </div>
         </header>
 
         <Tabs

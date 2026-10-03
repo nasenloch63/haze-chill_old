@@ -1,80 +1,36 @@
 import type { Metadata } from "next";
 
 export const seoConfig = {
-  baseUrl: "https://haze-chill.com",
+  baseUrl: "https://www.haze-chill.com",
   siteName: "Haze and Chill",
-  defaultTitle: "Haze and Chill | Café, Coffeeshop und Lounge in Kassel",
+  defaultTitle: "Haze and Chill – Café & Lounge in Kassel",
   titleTemplate: "%s | Haze and Chill Kassel",
   defaultDescription:
-    "Haze and Chill: Café, Coffeeshop und Lounge in Kassel — Specialty Coffee, Kaffee, Cocktails, Desserts, Gaming Lounge, Terrasse. Konsum vor Ort mit eigenem Material (bring your own), kein Cannabisverkauf. Spät geöffnet — late night café Kassel.",
-  defaultOgImage: "/gallery/haze-chill-logo.png",
-  /**
-   * Ziel-Phrasen für lokales SEO — im sichtbaren Text (Hero, About, FAQ, Lounge)
-   * und Meta-Beschreibungen verwenden, nicht nur hier ablegen.
-   * Bewusst ohne Kauf-/Rezept-Bait: ihr verkauft kein Cannabis.
-   */
-  localPhrases: [
-    "coffeeshop kassel",
-    "coffee kassel",
-    "café kassel",
-    "coffee shop kassel",
-    "specialty coffee kassel",
-    "lounge kassel",
-    "gaming lounge kassel",
-    "late night café kassel",
-    "cocktails kassel",
-    "desserts kassel",
-    "kaffee kassel",
-    "gemütliches café kassel",
-    "instagrammable café kassel",
-    "cannabis lounge kassel",
-    "konsum vor ort kassel",
-    "bring your own coffeeshop",
-    "eigenes cannabis mitbringen",
-    "kiffen in der lounge kassel",
-    "raucherlounge kassel",
-    "smoking lounge kassel",
-    "kein cannabisverkauf kassel",
-    "coffeeshop ohne verkauf",
-  ],
+    "Café und Lounge in der Kölnischen Str. 12–14 in Kassel. Kaffee, Cocktails, Snacks und Desserts. Täglich 17–02 Uhr (bis Ende). Speisekarte und Anfahrt.",
+  defaultOgImage: "/gallery/social-card.jpg",
+  instagramUrl: "https://www.instagram.com/haze_and_chill_cafe/",
+  mapsUrl: "https://maps.app.goo.gl/gEjB6Sn8PR39p6YH7",
 } as const;
 
-type MetadataInput = {
-  title: string;
-  description: string;
-  path?: string;
-};
+export const businessId = `${seoConfig.baseUrl}/#business`;
+export const websiteId = `${seoConfig.baseUrl}/#website`;
 
-export function buildPageMetadata({
-  title,
-  description,
-  path = "/",
-}: MetadataInput): Metadata {
+export function buildPageMetadata({ title, description, path = "/" }: {
+  title: string; description: string; path?: string;
+}): Metadata {
   const canonical = new URL(path, seoConfig.baseUrl).toString();
-
+  const fullTitle = path === "/" ? seoConfig.defaultTitle : `${title} | Haze and Chill Kassel`;
   return {
-    title,
-    description,
-    alternates: {
-      canonical,
-    },
+    title: { absolute: fullTitle }, description,
+    alternates: { canonical },
     openGraph: {
-      title,
-      description,
-      url: canonical,
-      siteName: seoConfig.siteName,
-      locale: "de_DE",
-      type: "website",
-      images: [
-        {
-          url: new URL(seoConfig.defaultOgImage, seoConfig.baseUrl).toString(),
-        },
-      ],
+      title: fullTitle, description, url: canonical,
+      siteName: seoConfig.siteName, locale: "de_DE", type: "website",
+      images: [{ url: new URL(seoConfig.defaultOgImage, seoConfig.baseUrl).toString(),
+        width: 1200, height: 630, alt: "Haze and Chill – Café und Lounge in Kassel" }],
     },
     twitter: {
-      card: "summary_large_image",
-      title,
-      description,
+      card: "summary_large_image", title: fullTitle, description,
       images: [new URL(seoConfig.defaultOgImage, seoConfig.baseUrl).toString()],
     },
   };
