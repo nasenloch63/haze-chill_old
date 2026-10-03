@@ -1,17 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { WarpShaderHero } from "@/components/ui/warp-shader";
 import { Button } from "@/components/ui/button";
 import { GradientLogoMark } from "@/components/haze/gradient-logo-mark";
 import { useLanguage } from "@/i18n/language-provider";
-
-function scrollToGallery() {
-  document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" });
-}
-
-function scrollToMenu() {
-  document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
-}
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -73,18 +66,16 @@ export function HeroSection() {
               <Button
                 variant="default"
                 size="lg"
-                type="button"
-                onClick={scrollToMenu}
+                asChild
               >
-                {t.hero.menuCta}
+                <Link href="/#menu">{t.hero.menuCta}</Link>
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                type="button"
-                onClick={scrollToGallery}
+                asChild
               >
-                {t.hero.vibeCta}
+                <Link href="/#gallery">{t.hero.vibeCta}</Link>
               </Button>
             </div>
           </div>

@@ -89,7 +89,6 @@ export function ArtOfChillGallery() {
   const y2 = useTransform(scrollYProgress, [0, 1], [-60, 100]);
   const y3 = useTransform(scrollYProgress, [0, 1], [55, -65]);
   const y4 = useTransform(scrollYProgress, [0, 1], [-55, 85]);
-  const y5 = useTransform(scrollYProgress, [0, 1], [35, -45]);
 
   return (
     <section
@@ -116,7 +115,7 @@ export function ArtOfChillGallery() {
           <div className="flex flex-col gap-12 md:gap-10 lg:gap-16">
             <div className="grid gap-12 md:grid-cols-2 md:gap-10 lg:gap-16">
               <TrippyImage
-                src="/gallery/pic1.jpg"
+                src="/gallery/pic1.webp"
                 alt={t.gallery.pic1Alt}
                 shadowClass="shadow-[0_0_40px_rgba(139,92,246,0.5)]"
                 align="left"
@@ -125,7 +124,7 @@ export function ArtOfChillGallery() {
                 rotateHover={-2.5}
               />
               <TrippyImage
-                src="/gallery/pic2.jpg"
+                src="/gallery/pic2.webp"
                 alt={t.gallery.pic2Alt}
                 shadowClass="shadow-[0_0_40px_rgba(16,185,129,0.5)]"
                 align="right"
@@ -137,7 +136,7 @@ export function ArtOfChillGallery() {
 
             <div className="grid gap-12 md:grid-cols-2 md:gap-10 lg:gap-16">
               <TrippyImage
-                src="/gallery/pic3.png"
+                src="/gallery/pic3.webp"
                 alt={t.gallery.pic3Alt}
                 shadowClass="shadow-[0_0_40px_rgba(139,92,246,0.45)]"
                 align="left"
@@ -146,7 +145,7 @@ export function ArtOfChillGallery() {
                 rotateHover={-2.5}
               />
               <TrippyImage
-                src="/gallery/pic4.png"
+                src="/gallery/pic4.webp"
                 alt={t.gallery.pic4Alt}
                 shadowClass="shadow-[0_0_40px_rgba(16,185,129,0.45)]"
                 align="right"
@@ -158,7 +157,7 @@ export function ArtOfChillGallery() {
 
             <div className="grid gap-12 md:grid-cols-2 md:gap-10 lg:gap-16">
               <TrippyImage
-                src="/gallery/pic5.png"
+                src="/gallery/pic5.webp"
                 alt={t.gallery.pic5Alt}
                 shadowClass="shadow-[0_0_40px_rgba(139,92,246,0.45)]"
                 align="left"
@@ -167,7 +166,7 @@ export function ArtOfChillGallery() {
                 rotateHover={-2.5}
               />
               <TrippyImage
-                src="/gallery/pic6.png"
+                src="/gallery/pic6.webp"
                 alt={t.gallery.pic6Alt}
                 shadowClass="shadow-[0_0_40px_rgba(16,185,129,0.45)]"
                 align="right"

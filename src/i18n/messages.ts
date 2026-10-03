@@ -79,6 +79,7 @@ export type Messages = {
   menu: {
     title: string;
     pdfCta: string;
+    fullMenuCta: string;
     categoriesAria: string;
     priceAria: (price: string) => string;
     footerNote: string;
@@ -181,7 +182,7 @@ export const messages: Record<Locale, Messages> = {
     hero: {
       locationLine: "Kassel · Hessen",
       subtitle:
-        "Dein Coffee Shop und Café in Kassel: Specialty Coffee, Kaffee, Cocktails und Desserts — dazu Lounge-Vibes, Terrasse und Gaming. Konsum vor Ort mit eigenem Material (bring your own); wir verkaufen kein Cannabis. Spät geöffnet, wenn du ein late night Café in Kassel suchst.",
+        "Kaffee, Cocktails, Snacks und Desserts in der Kasseler Innenstadt. Lounge, Terrasse und Gaming – täglich von 17:00 bis 02:00 Uhr (bis Ende).",
       menuCta: "Zum Menü",
       vibeCta: "Dem Vibe folgen",
     },
@@ -232,6 +233,7 @@ export const messages: Record<Locale, Messages> = {
     menu: {
       title: "Menü",
       pdfCta: "Speisekarte als PDF",
+      fullMenuCta: "Alle Speisen und Getränke auf einer Seite",
       categoriesAria: "Menü-Kategorien",
       priceAria: (price) => `Preis ${price}`,
       footerNote:
@@ -364,7 +366,7 @@ export const messages: Record<Locale, Messages> = {
     hero: {
       locationLine: "Kassel · Hessen",
       subtitle:
-        "Neon street art and a coffeeshop-style café in Kassel — specialty coffee, cocktails, and desserts, plus lounge, terrace, and gaming. On-site use with your own material (bring your own); we do not sell cannabis. Open late when you want a late-night spot.",
+        "Coffee, cocktails, snacks and desserts in central Kassel. Lounge, terrace and gaming – open daily from 5 pm to 2 am (until closing).",
       menuCta: "View Menu",
       vibeCta: "Follow the Vibe",
     },
@@ -413,6 +415,7 @@ export const messages: Record<Locale, Messages> = {
     menu: {
       title: "The Menu",
       pdfCta: "Menu as PDF",
+      fullMenuCta: "All food and drinks on one page",
       categoriesAria: "Menu categories",
       priceAria: (price) => `Price ${price}`,
       footerNote:

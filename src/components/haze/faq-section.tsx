@@ -9,7 +9,7 @@ export function FaqSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="faq" className="bg-[#09070e]">
+    <section id="faq" lang="de" className="bg-[#09070e]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
@@ -21,15 +21,14 @@ export function FaqSection() {
 
         <header className="mx-auto max-w-3xl pt-10 text-center">
           <h1 className="font-display text-3xl font-bold text-white sm:text-4xl">
-            FAQ zum Café in Kassel
+            Fragen zu deinem Besuch
           </h1>
           <p className="mt-3 text-violet-200/70">
-            Antworten auf häufige Fragen rund um unseren Coffeeshop in Kassel:
-            Lage, Angebot, Atmosphäre, Konsum vor Ort mit eigenem Material (bring
-            your own), Cannabis (kein Verkauf) und Öffnungszeiten.
+            Adresse, Öffnungszeiten, Speisekarte und Antworten zum Café und zur Lounge.
           </p>
         </header>
 
+        <p className="mt-6 text-center"><Link href="/speisekarte" className="text-emerald-300 underline underline-offset-4">Speisekarte mit allen Preisen</Link></p>
         <div className="mx-auto mt-10 grid max-w-4xl gap-4 pb-4 sm:gap-5 sm:pb-0">
           {faqItems.map((item) => (
             <details
