@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Instagram } from "lucide-react";
 import { useLanguage } from "@/i18n/language-provider";
+import { WebsiteCredit } from "@/components/haze/website-credit";
 
 export function SiteFooter() {
   const { t } = useLanguage();
@@ -16,9 +17,6 @@ export function SiteFooter() {
             {t.footer.copyright}
           </p>
           <p className="mt-1 text-sm text-violet-300/60">{t.footer.region}</p>
-          <p className="mt-4 font-display text-sm italic text-emerald-400/90">
-            {t.footer.signoff}
-          </p>
         </div>
         <div className="flex flex-col items-center gap-3 md:items-end">
           <Link
@@ -77,6 +75,7 @@ export function SiteFooter() {
               {t.footer.legalPrivacy}
             </Link>
           </nav>
+          <WebsiteCredit />
           <p className="text-xs text-violet-500/50">
             © {new Date().getFullYear()} {t.footer.copyright}
           </p>

@@ -31,16 +31,16 @@ export const faqItems: FaqItem[] = [
   {
     question: "Bietet ihr Frühstück oder Brunch in Kassel an?",
     answer:
-      "Unser Fokus liegt auf dem Nachmittags- und Abendgeschäft ab 16:00 Uhr. Für Kaffee, Desserts und entspannte Café-Atmosphäre am späteren Tag bist du bei uns genau richtig.",
+      "Unser Fokus liegt auf dem Nachmittags- und Abendgeschäft ab 17:00 Uhr. Für Kaffee, Desserts und entspannte Café-Atmosphäre am späteren Tag bist du bei uns genau richtig.",
     schemaAnswer:
-      "Unser Fokus liegt auf dem Nachmittags- und Abendgeschäft ab 16:00 Uhr.",
+      "Unser Fokus liegt auf dem Nachmittags- und Abendgeschäft ab 17:00 Uhr.",
   },
   {
     question: "Wann hat euer Coffeeshop in Kassel geöffnet?",
     answer:
-      "Wir sind täglich geöffnet. Die aktuellen Öffnungszeiten findest du direkt im Bereich Standort & Zeiten auf dieser Seite.",
+      "Wir sind jeden Tag von 17:00 bis 02:00 Uhr (bis Ende) geöffnet.",
     schemaAnswer:
-      "Die aktuellen Öffnungszeiten findest du im Bereich Standort und Zeiten auf der Website.",
+      "Täglich von 17:00 bis 02:00 Uhr (bis Ende).",
   },
   {
     question: "Gibt es bei euch eine Gaming Lounge in Kassel?",
@@ -52,9 +52,9 @@ export const faqItems: FaqItem[] = [
   {
     question: "Seid ihr abends als late night café in Kassel offen?",
     answer:
-      "Wir sind ab 16:00 Uhr für dich da und oft bis in die Nacht — ideal, wenn du nach einem Coffee Shop in Kassel suchst, der später offen hat.",
+      "Wir sind täglich von 17:00 bis 02:00 Uhr (bis Ende) für dich da.",
     schemaAnswer:
-      "Ab 16:00 Uhr, oft bis in die Nacht — später als viele klassische Cafés.",
+      "Täglich von 17:00 bis 02:00 Uhr (bis Ende).",
   },
   {
     question: "Ist Kiffen bei euch erlaubt?",

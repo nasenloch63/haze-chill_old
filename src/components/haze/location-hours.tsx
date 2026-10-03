@@ -47,7 +47,6 @@ export function LocationHours() {
               </tbody>
             </table>
           </div>
-          <p className="mt-4 text-xs text-violet-400/50">{t.location.disclaimer}</p>
         </div>
 
         <div className="flex min-h-[320px] flex-col">
