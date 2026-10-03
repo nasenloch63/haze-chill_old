@@ -9,6 +9,16 @@ export type ReviewItem = {
 };
 
 export type Messages = {
+  links: {
+    navLabel: string;
+    intro: string;
+    menu: string;
+    menuDescription: string;
+    mapsDescription: string;
+    website: string;
+    newTab: string;
+    footerNavLabel: string;
+  };
   nav: {
     menu: string;
     art: string;
@@ -225,6 +235,16 @@ const reviewItemsEn: ReviewItem[] = [
 
 export const messages: Record<Locale, Messages> = {
   de: {
+    links: {
+      navLabel: "Links",
+      intro: "Dein Spot in Kassel. Alle wichtigen Links an einem Ort.",
+      menu: "Speisekarte",
+      menuDescription: "Drinks, Snacks & Sweets · PDF öffnen",
+      mapsDescription: "Finde uns & plane deine Anfahrt",
+      website: "Zur Website",
+      newTab: "(öffnet in einem neuen Tab)",
+      footerNavLabel: "Rechtliche Informationen",
+    },
     nav: {
       menu: "Menü",
       art: "Die Kunst",
@@ -405,6 +425,16 @@ export const messages: Record<Locale, Messages> = {
     },
   },
   en: {
+    links: {
+      navLabel: "Links",
+      intro: "Your spot in Kassel. All the links you need in one place.",
+      menu: "Menu",
+      menuDescription: "Drinks, snacks & sweets · Open PDF",
+      mapsDescription: "Find us & plan your visit",
+      website: "Visit our website",
+      newTab: "(opens in a new tab)",
+      footerNavLabel: "Legal information",
+    },
     nav: {
       menu: "Menu",
       art: "The Art",
