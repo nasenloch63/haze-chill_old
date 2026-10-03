@@ -35,6 +35,15 @@ export function SiteFooter() {
             aria-label="Legal"
           >
             <Link
+              href="/links"
+              className="transition-colors hover:text-emerald-300/90"
+            >
+              {t.links.navLabel}
+            </Link>
+            <span className="text-violet-600/60" aria-hidden>
+              ·
+            </span>
+            <Link
               href="/faq"
               className="transition-colors hover:text-emerald-300/90"
             >
