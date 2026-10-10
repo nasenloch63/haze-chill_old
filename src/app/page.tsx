@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { SiteNavbar } from "@/components/haze/site-navbar";
 import { HeroSection } from "@/components/haze/hero-section";
 import { MenuSection } from "@/components/MenuSection";
+import { ReservationSection } from "@/components/haze/reservation-section";
 import { LocalSeoSections } from "@/components/haze/local-seo-sections";
 import { ArtOfChillGallery } from "@/components/haze/art-gallery";
 import { LoungeExperience } from "@/components/haze/lounge-experience";
@@ -27,6 +28,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <LocalSeoSections />
+        <ReservationSection />
         <MenuSection />
         <ArtOfChillGallery />
         <LoungeExperience />

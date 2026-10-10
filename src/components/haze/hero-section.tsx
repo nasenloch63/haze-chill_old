@@ -63,8 +63,11 @@ export function HeroSection() {
               {t.hero.subtitle}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:mt-12 sm:flex-row sm:gap-5">
+              <Button variant="default" size="lg" asChild>
+                <Link href="/#reservation">{t.hero.reservationCta}</Link>
+              </Button>
               <Button
-                variant="default"
+                variant="outline"
                 size="lg"
                 asChild
               >

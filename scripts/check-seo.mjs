@@ -1,10 +1,10 @@
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 
-// Validate the exported HTML rather than the hydrated browser DOM.
+// Validate prerendered HTML rather than the hydrated browser DOM.
 const origin = "https://www.haze-chill.com";
 const routes = ["/", "/speisekarte", "/faq", "/links", "/impressum", "/datenschutz"];
-const htmlFor = route => readFileSync(`out/${route === "/" ? "index" : route.slice(1)}.html`, "utf8");
+const htmlFor = route => readFileSync(`.next/server/app/${route === "/" ? "index" : route.slice(1)}.html`, "utf8");
 const decode = text => text.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 const pages = new Map(routes.map(route => [route, htmlFor(route)]));
 const titles = new Set();
@@ -62,13 +62,13 @@ for (const [route, html] of pages) {
     if (targetHtml) {
       if (anchor) assert(targetHtml.includes(`id="${anchor}"`), `Broken anchor: ${route} → ${href}`);
     } else {
-      assert(existsSync(`out${target}`), `Broken internal link: ${route} → ${href}`);
+      assert(existsSync(`public${target}`), `Broken internal link: ${route} → ${href}`);
     }
   }
 }
-const sitemap = readFileSync("out/sitemap.xml", "utf8");
+const sitemap = readFileSync("public/sitemap.xml", "utf8");
 for (const route of routes) assert(sitemap.includes(`<loc>${origin}${route}</loc>`), `Sitemap: ${route}`);
 assert.equal((sitemap.match(/<loc>/g) || []).length, routes.length);
-assert(readFileSync("out/robots.txt", "utf8").includes(`Sitemap: ${origin}/sitemap.xml`));
-assert(existsSync("out/gallery/social-card.jpg"));
+assert(readFileSync("public/robots.txt", "utf8").includes(`Sitemap: ${origin}/sitemap.xml`));
+assert(existsSync("public/gallery/social-card.jpg"));
 console.log(`SEO checks passed: ${routes.length} pages; ${itemCount} visible menu items with matching structured prices; canonicals, sitemap, FAQ and internal links.`);
