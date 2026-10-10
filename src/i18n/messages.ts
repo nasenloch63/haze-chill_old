@@ -33,6 +33,7 @@ export type Messages = {
     locationLine: string;
     subtitle: string;
     menuCta: string;
+    reservationCta: string;
     vibeCta: string;
   };
   gallery: {
@@ -184,6 +185,7 @@ export const messages: Record<Locale, Messages> = {
       subtitle:
         "Kaffee, Cocktails, Snacks und Desserts in der Kasseler Innenstadt. Lounge, Terrasse und Gaming – täglich von 17:00 bis 02:00 Uhr (bis Ende).",
       menuCta: "Zum Menü",
+      reservationCta: "Tisch anfragen",
       vibeCta: "Dem Vibe folgen",
     },
     gallery: {
@@ -368,6 +370,7 @@ export const messages: Record<Locale, Messages> = {
       subtitle:
         "Coffee, cocktails, snacks and desserts in central Kassel. Lounge, terrace and gaming – open daily from 5 pm to 2 am (until closing).",
       menuCta: "View Menu",
+      reservationCta: "Request a table",
       vibeCta: "Follow the Vibe",
     },
     gallery: {

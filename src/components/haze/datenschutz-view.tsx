@@ -57,49 +57,11 @@ export function DatenschutzView() {
 
           <LegalH2>2. Hosting</LegalH2>
           <LegalP>
-            Diese Webseite wird gehostet bei:
-            <br />
-            <strong className="text-violet-200">Hetzner Online GmbH</strong>
-            <br />
-            Industriestr. 25
-            <br />
-            91710 Gunzenhausen
-            <br />
-            Deutschland
-            <br />
-            <br />
-            Der Server befindet sich in Nürnberg, Deutschland. Hetzner verarbeitet
-            beim Aufruf der Webseite automatisch folgende Server-Log-Daten:
-            <br />
-            <br />
-            IP-Adresse des zugreifenden Geräts (anonymisiert)
-            <br />
-            Datum und Uhrzeit des Zugriffs
-            <br />
-            Aufgerufene URL
-            <br />
-            Browsertyp und Betriebssystem
-            <br />
-            Referrer URL (zuvor besuchte Webseite)
-            <br />
-            <br />
-            Diese Daten werden ausschließlich zur technischen Bereitstellung der
-            Webseite verarbeitet und nicht mit anderen Datenquellen
-            zusammengeführt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
-            (berechtigtes Interesse).
-            <br />
-            <br />
-            Hetzner Online GmbH ist als Auftragsverarbeiter gemäß Art. 28 DSGVO
-            vertraglich gebunden. Weitere Informationen findest du in der
-            Datenschutzerklärung von Hetzner:{" "}
-            <a
-              href="https://www.hetzner.com/de/legal/privacy-policy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-emerald-200/90"
-            >
-              https://www.hetzner.com/de/legal/privacy-policy
-            </a>
+            Die Website wird über Vercel bereitgestellt. Bei Aufrufen werden
+            technische Verbindungsdaten wie IP-Adresse, aufgerufene URL,
+            Zeitpunkt, Browser und Betriebssystem zur Auslieferung und zum
+            sicheren Betrieb verarbeitet. Weitere Informationen findest du in
+            den <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Datenschutzhinweisen von Vercel</a>.
           </LegalP>
 
           <LegalH2>3. Keine Cookies, kein Tracking</LegalH2>
@@ -190,7 +152,28 @@ export function DatenschutzView() {
             </a>
           </LegalP>
 
-          <LegalH2>7. Deine Rechte</LegalH2>
+          <section id="reservations" className="scroll-mt-24">
+            <LegalH2>7. Tischreservierungsanfragen</LegalH2>
+            <LegalP>
+              Wenn du das Reservierungsformular nutzt, verarbeiten wir deinen
+              Namen, deine E-Mail-Adresse, das gewünschte Datum und die Uhrzeit,
+              die Personenzahl sowie optional deine Telefonnummer und Nachricht,
+              um deine Anfrage zu bearbeiten und dir zu antworten. Die Angaben
+              werden per E-Mail an info@naser-solutions.de weitergeleitet.
+              Für den Versand verwenden wir einen SMTP-Maildienst.
+            </LegalP>
+            <LegalP>
+              Auf der Website wird keine zusätzliche Reservierungsdatenbank
+              angelegt. Die Anfrage wird im empfangenden E-Mail-Postfach
+              verarbeitet und nur so lange aufbewahrt, wie dies zur Bearbeitung
+              und gegebenenfalls zur Erfüllung gesetzlicher Pflichten erforderlich
+              ist. Zur Abwehr wiederholter Anfragen wird ein kurzlebiger,
+              gehashter IP-Zähler verwendet; die Kontaktdaten werden dabei nicht
+              gespeichert. Eine Reservierungsanfrage ist noch keine Tischbestätigung.
+            </LegalP>
+          </section>
+
+          <LegalH2>8. Deine Rechte</LegalH2>
           <LegalP>
             Du hast gegenüber uns folgende Rechte bezüglich deiner personenbezogenen
             Daten:
@@ -209,7 +192,7 @@ export function DatenschutzView() {
             jeweilige Landesbeauftragte für Datenschutz.
           </LegalP>
 
-          <LegalH2>8. Kontakt bei Datenschutzfragen</LegalH2>
+          <LegalH2>9. Kontakt bei Datenschutzfragen</LegalH2>
           <LegalP>
             Bei Fragen zum Datenschutz wende dich bitte an:
             <br />
@@ -229,9 +212,9 @@ export function DatenschutzView() {
             ) : null}
           </LegalP>
 
-          <LegalH2>9. Aktualität</LegalH2>
+          <LegalH2>10. Aktualität</LegalH2>
           <LegalP>
-            Diese Datenschutzerklärung hat den Stand: März 2026
+            Diese Datenschutzerklärung hat den Stand: Oktober 2026
             <br />
             Bei Änderungen an der Webseite oder neuen gesetzlichen Vorgaben wird
             diese Erklärung entsprechend aktualisiert.
@@ -322,8 +305,22 @@ export function DatenschutzView() {
           .
         </LegalP>
 
-        <LegalH2>{t.legal.privacyNoForm}</LegalH2>
-        <LegalP>{t.legal.privacyNoFormBody}</LegalP>
+        <section id="reservations" className="scroll-mt-24">
+          <LegalH2>Table reservation requests</LegalH2>
+          <LegalP>
+            We process your name, email, requested evening and arrival time,
+            number of guests, and any optional phone number and message to
+            handle your request and reply. Your details are forwarded by email
+            to info@naser-solutions.de using an SMTP mail service. No additional
+            reservation database is maintained on this website.
+          </LegalP>
+          <LegalP>
+            Requests are retained in the receiving email inbox for as long as
+            needed to handle them and meet applicable obligations. A temporary
+            hashed IP counter helps prevent repeated submissions; it does not
+            store contact details. A request is not a confirmed table booking.
+          </LegalP>
+        </section>
 
         <LegalH2>{t.legal.privacyRetention}</LegalH2>
         <LegalP>{t.legal.privacyRetentionBody}</LegalP>
