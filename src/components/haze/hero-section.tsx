@@ -78,7 +78,7 @@ export function HeroSection() {
                 size="lg"
                 asChild
               >
-                <Link href="/#gallery">{t.hero.vibeCta}</Link>
+                <Link href="/#location">{t.hero.vibeCta}</Link>
               </Button>
             </div>
           </div>
